@@ -1,5 +1,5 @@
 angular.module('hack.controllers', [])
-	.controller('AppCtrl', function(Search) {
+	.controller('AppCtrl', ['Search', function(Search) {
 		var self = this;
 
 		this.welcome = "Hello World";
@@ -13,4 +13,4 @@ angular.module('hack.controllers', [])
 				self.venues = data.venues;
 			});
 		};
-	});
+	}]);

@@ -14,6 +14,8 @@ Search.prototype.query = function(lat, lng, search) {
 	});
 };
 
+Search.$inject = ['$http'];
+
 angular.module('hack.services', [])
 	.service('Search', Search);
 
