@@ -2,7 +2,7 @@ angular.module('hack.controllers', [])
 	.controller('AppCtrl', ['Search', function(Search) {
 		var self = this;
 
-		this.welcome = "Hello World";
+		this.welcome = "Hack Remotely";
 
 		window.navigator.geolocation.getCurrentPosition(function(pos) {
 			self.position = pos;
