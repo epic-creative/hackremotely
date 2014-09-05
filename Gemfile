@@ -41,3 +41,7 @@ gem 'spring',        group: :development
 gem 'rails_12factor', group: :production
 gem 'foursquare2'
 gem 'angularjs-rails'
+
+group :test, :development do
+  gem 'jasmine-rails'
+end
