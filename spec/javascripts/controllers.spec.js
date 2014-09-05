@@ -2,20 +2,33 @@
 //= require angular-mocks
 
 describe('controllers', function() {
+    var AppCtrl;
+
     beforeEach(module('hack.controllers'));
 
-    it('should work', inject(function($controller) {
-        var AppCtrl = $controller('AppCtrl', {
+    beforeEach(inject(function($controller) {
+        AppCtrl = $controller('AppCtrl', {
             Search: function() {},
             Geo: {
                 locate: function() {
                     return {
-                        then: function() {}
+                        then: function(fn) {
+                            fn({
+                                lat: '37',
+                                lng: '-41'
+                            });
+                        }
                     }
                 }
             }
         });
-
-        expect(AppCtrl).toBeDefined();
     }));
+
+    it('should work', function() {
+        expect(AppCtrl).toBeDefined();
+    });
+
+    it('should get the position', function() {
+        expect(AppCtrl.position.lat).toBe('37');
+    });
 });
