@@ -14,4 +14,10 @@
 //= require unstable/angular
 //= require unstable/angular-resource
 //= require unstable/angular-route
-//= require_tree .
+//= require app.js
+// Services
+//= require ./services/main.js
+//= require_tree ./services/
+// Controllers
+//= require ./controllers/main.js
+//= require_tree ./controllers/
