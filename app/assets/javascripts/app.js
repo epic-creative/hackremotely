@@ -8,7 +8,7 @@ var app = angular.module('hack.app',
         'hack.directives'
     ]);
 
-app.config(function setup($routeProvider, $locationProvider) {
+app.config(['$routeProvider', '$locationProvider', function setup($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 
     $routeProvider
@@ -23,6 +23,6 @@ app.config(function setup($routeProvider, $locationProvider) {
         .otherwise({
             redirectTo: '/'
         });
-});
+}]);
 
 })();
