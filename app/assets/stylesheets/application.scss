@@ -18,8 +18,12 @@
 // Import BareKit
 @import "barekit/css/barekit";
 
+// Custom icon font
+@import "global/icon-font";
+
 // Base styles
 @import "global/base";
 
 // Modules
 @import "module/header";
+@import "module/venue";

@@ -1,26 +1,85 @@
 .header {
-	padding: 1.875em 0;
+	padding: 1em 0;
 	background: #50b9b2;
+
+    @include breakpoint(medium) {
+        padding: 1.875em 0;
+    }
 }
 
 .logo {
 	margin: 0;
 	color: #fff;
+    font-size: 1.625em;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+
+    @include breakpoint(medium) {
+        text-align: left;
+    }
+}
+
+.search-form {
+    position: relative;
+    margin: 2em auto;
+
+     &::before {
+        position: absolute;
+        top: .188em;
+        left: .125em;
+        float: left;
+        font-size: 4.5em;
+        font-family: 'icomoon';
+        content: "\e605";
+        color: #e5e8f0;
+    }
+
+    @include breakpoint(medium) {
+        margin: 6.25em auto 5em;
+    }
 }
 
 .search-input {
-    width: 80%;
-    height: 40px; 
-    padding: 20px;
-    font-size: 1.5em; 
-    border: 1px solid #27B7B1;
+    padding: 0 1em !important;
+    height: 2.666em;
+    font-size: 1.25em;
+    font-family: 'Roboto Slab', serif;
+    border: 2px solid rgba(34, 34, 34, .09);
+    border-bottom: 0;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+
+    &:focus {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    @include breakpoint(medium) {
+        padding: 0 1em 0 2.25em !important;
+        font-size: 2.25em;
+        border-bottom: 2px solid rgba(34, 34, 34, .09);
+        border-right: 0;
+    }
 }
 
-.search-button {
-    height: 40px;
-    padding: 12px;
-    margin-left: -5px;
-    background: #F85300;
-    color: white;
-    border: 1px solid #27B7B1;
+.search-btn {
+    height: 3.375em;
+    font-size: 1em;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 700;
+    background: #e5622f;
+    color: #fff;
+    border: 2px solid rgba(34, 34, 34, .09);
+    border-top: 0;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+
+    @include breakpoint(medium) {
+        height: 3.43em;
+        font-size: 1.75em;
+        border-top: 2px solid rgba(34, 34, 34, .09);
+        border-left: 0;
+    }
 }

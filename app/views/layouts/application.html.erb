@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Hackremotely</title>
+    <link href="http://fonts.googleapis.com/css?family=Titillium+Web:700italic,700|Roboto+Slab:400,700" rel="stylesheet" type="text/css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -12,12 +13,9 @@
 			<div class="container">
 				<h1 class="logo">Hack Remotely</h1>
 
-                <form ng-submit="vm.send()">
-				    <input type="text" class="search-input" ng-model="vm.query" placeholder="Where ya hackin'?">
-				    <button ng-click="vm.send()" ng-disabled="!vm.position" class="search-button">
-                        <i class="fa fa-search"></i>
-                        Find a place
-                    </button>
+                <form class="search-form row" ng-submit="vm.send()">
+				    <input type="text" class="search-input sm-12 md-9" ng-model="vm.query" placeholder="Where ya hackin'?">
+				    <button class="search-btn sm-12 md-3" ng-click="vm.send()" ng-disabled="!vm.position">Find a place</button>
                 </form>
 			</div>
 		</header>

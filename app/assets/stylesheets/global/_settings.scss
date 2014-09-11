@@ -1,0 +1,19 @@
+// Breakpoints
+
+$small: 30em;
+$medium: 50em;
+$large: 64em;
+
+// Rails isn't pulling in BK's mixins for some reason, so repeating them here
+// Media queries
+@mixin breakpoint($size) {
+	@if $size == small {
+		@media (min-width: $small) { @content; }
+	}
+	@else if $size == medium {
+		@media (min-width: $medium) { @content; }
+	}
+	@else if $size == large {
+		@media (min-width: $large) { @content; }
+	}
+}
