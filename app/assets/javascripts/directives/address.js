@@ -5,6 +5,6 @@ angular.module('hack.directives')
             scope: {
                 location: '='
             },
-            templateUrl: '/assets/directives/address.html'
+            templateUrl: '/templates/directives/address.html'
         };
     });
