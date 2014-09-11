@@ -5,7 +5,7 @@ function Search($http) {
 }
 
 Search.prototype.query = function(lat, lng, search) {
-	return this.$http.get('/welcome/search.json', {
+	return this.$http.get('/api/search.json', {
 		params: {
 			lat: lat,
 			lng: lng,

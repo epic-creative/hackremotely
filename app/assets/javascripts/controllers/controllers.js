@@ -23,3 +23,8 @@ angular.module('hack.controllers')
     
 })();
 
+(function () {
+    function SearchCtrl() {
+        // body...
+    }
+})(); 

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hackremotely</title>
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	<%= csrf_meta_tags %>
+    <title>Hackremotely</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
 </head>
 <body ng-app="hack.app">
 	<div ng-controller="AppCtrl as vm">
@@ -49,6 +49,8 @@
 				</div>
 			</div>
 		</section>
+
+        <div ng-view></div> 
 	</div>
 </body>
 </html>
