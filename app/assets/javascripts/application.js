@@ -21,3 +21,4 @@
 // Controllers
 //= require ./controllers/main.js
 //= require_tree ./controllers/
+//= require barekit/js/barekit.min.js

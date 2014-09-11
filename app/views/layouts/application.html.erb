@@ -8,43 +8,47 @@
 </head>
 <body ng-app="hack.app">
 	<div ng-controller="AppCtrl as vm">
-		<div class="container">
-			<div class="row">
-				<input type="text" ng-model="vm.search" />
+		<header class="header row">
+			<div class="container">
+				<h1 class="logo">Hack Remotely</h1>
+
+				<input type="text" ng-model="vm.search">
 				<button ng-click="vm.send()">Search</button>
-				
-				<div class="venue-list col-md-12">
-					<div class="venue row" ng-repeat="item in vm.venues">
-						<div class="col-md-3">
-							<h5 class="venue-name">{{item.name}}</h5>
-							<address>
-								{{item.location.formattedAddress }}
-							</address>
-						</div>
-						<div class="col-sm-4">
-							{{item.hereNow.summary}}
-						</div>
-						<div class="col-sm-4">
-							<div>Wifi: <i class="glyphicon glyphicon-star"></i>
-								<i class="glyphicon glyphicon-star"></i>
-								<i class="glyphicon glyphicon-star"></i>
-								<i class="glyphicon glyphicon-star"></i>
-							<i class="glyphicon glyphicon-star-empty"></i></div>
-							<div>Food: <i class="glyphicon glyphicon-star"></i>
-								<i class="glyphicon glyphicon-star"></i>
-								<i class="glyphicon glyphicon-star"></i>
-								<i class="glyphicon glyphicon-star"></i>
-							<i class="glyphicon glyphicon-star-empty"></i></div>
-							<div>Environment: <i class="glyphicon glyphicon-star"></i>
-								<i class="glyphicon glyphicon-star"></i>
-								<i class="glyphicon glyphicon-star"></i>
-								<i class="glyphicon glyphicon-star"></i>
-							<i class="glyphicon glyphicon-star-empty"></i></div>
-						</div>
+			</div>
+		</header>
+
+		<section class="container row">
+			<div class="venue-list col-md-12">
+				<div class="venue row" ng-repeat="item in vm.venues">
+					<div class="col-md-3">
+						<h5 class="venue-name">{{item.name}}</h5>
+						<address>
+							{{item.location.formattedAddress }}
+						</address>
+					</div>
+					<div class="col-sm-4">
+						{{item.hereNow.summary}}
+					</div>
+					<div class="col-sm-4">
+						<div>Wifi: <i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+						<i class="glyphicon glyphicon-star-empty"></i></div>
+						<div>Food: <i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+						<i class="glyphicon glyphicon-star-empty"></i></div>
+						<div>Environment: <i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+						<i class="glyphicon glyphicon-star-empty"></i></div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	</div>
 </body>
 </html>
