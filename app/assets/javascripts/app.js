@@ -9,14 +9,12 @@ var app = angular.module('hack.app',
     ]);
 
 app.config(['$routeProvider', '$locationProvider', function setup($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
-
     $routeProvider
         .when('/', {
-            templateUrl: '/assets/welcome/index.html'
+            templateUrl: '/templates/welcome/index.html'
         })
         .when('/location/:id', {
-            templateUrl: '/assets/location/details.html',
+            templateUrl: '/templates/location/details.html',
             controller: 'LocationCtrl',
             controllerAs: 'vm' 
         })

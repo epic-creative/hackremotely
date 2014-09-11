@@ -1,6 +1,8 @@
 (function() {
 
 function AppCtrl (Search, Geo, $location) {
+    console.log("App loaded...");
+
     this.welcome = "Hack Remotely";
     this.search = Search;
     this.geo = Geo;

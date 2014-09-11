@@ -58,6 +58,4 @@ Rails.application.routes.draw do
 
   # get "api" => proc { [404, {}, ['Invalid API endpoint']] }
   # get "api/*path" => proc { [404, {}, ['Invalid API endpoint']] }
-
-  get "*path" => "welcome#index"
 end
