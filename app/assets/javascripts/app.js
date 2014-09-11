@@ -9,8 +9,6 @@ var app = angular.module('hack.app',
     ]);
 
 app.config(['$routeProvider', '$locationProvider', function setup($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
-
     $routeProvider
         .when('/', {
             templateUrl: '/assets/welcome/index.html'
