@@ -4,7 +4,11 @@
     <title>Hackremotely</title>
     <link href="http://fonts.googleapis.com/css?family=Titillium+Web:700italic,700|Roboto+Slab:400,700" rel="stylesheet" type="text/css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    
+    <script src="//maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.12/gmaps.min.js"></script>
+
+    <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
 </head>
 <body ng-app="hack.app">
@@ -13,9 +17,19 @@
 			<div class="container header-contain">
 				<h1 class="logo">Hack Remotely</h1>
 
-                <form class="search-form row" ng-submit="vm.send()">
-				    <input type="text" class="search-input sm-12 md-9" ng-model="vm.query" placeholder="Where ya hackin'?">
-				    <button class="search-btn sm-12 md-3" ng-click="vm.send()" ng-disabled="!vm.position">Find a place</button>
+                <form class="search-form row">
+				    <input hack-autosuggest 
+                        source="vm.categories" 
+                        category="vm.category"
+                        query="vm.query"
+                        search="vm.send()"
+                        type="text" class="search-input sm-12 md-9" 
+                        ng-model="vm.query" ng-change="vm.queryChanged()" placeholder="Where ya hackin'?">
+                    
+                    <button ng-click="vm.send()" ng-disabled="!vm.position" class="search-btn sm-12 md-3">
+                        Find a place
+                    </button>
+
                     <p class="search-help left">i.e. Nashville, Omaha, Dallas, etc.</p>
                 </form>
 			</div>
@@ -32,5 +46,10 @@
 		<section class="container row" ng-view>
 		</section>
 	</div>
+
+    <script>
+        window.Foursquare = {};
+        Foursquare.categories = <%= raw @categories.to_json %>
+    </script>
 </body>
 </html>

@@ -5,7 +5,8 @@ class ApiController < ApplicationController
         @venues = @client.search_venues(
             :ll => location[:lat].to_s + ',' + location[:lng].to_s, 
             :query => search_query[:search],
-            :v => 20140806
+            :v => 20140806,
+            :categoryId => search_query[:categoryId]
         )
 
         respond_to do |format|
@@ -32,7 +33,7 @@ class ApiController < ApplicationController
     end
 
     def search_query
-        params.permit(:search)
+        params.permit(:search, :categoryId)
     end
 end
 
