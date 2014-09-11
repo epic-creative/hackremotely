@@ -1,0 +1,25 @@
+.venue-list {
+    .venue-count {
+        margin: 10px 0;
+        font-weight: normal;
+    }
+
+    .venue-list-header {
+        background: #171C2A;
+        color: white;
+        padding: 10px;
+    }
+
+    .venue {
+        padding: 20px;
+
+        background: #f6f8f9; /* Old browsers */
+        background: -moz-linear-gradient(top,  #f6f8f9 0%, #e5ebee 48%, #e5ebee 48%, #d7dee3 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f8f9), color-stop(48%,#e5ebee), color-stop(48%,#e5ebee), color-stop(100%,#d7dee3)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #f6f8f9 0%,#e5ebee 48%,#e5ebee 48%,#d7dee3 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #f6f8f9 0%,#e5ebee 48%,#e5ebee 48%,#d7dee3 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #f6f8f9 0%,#e5ebee 48%,#e5ebee 48%,#d7dee3 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #f6f8f9 0%,#e5ebee 48%,#e5ebee 48%,#d7dee3 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#d7dee3',GradientType=0 ); /* IE6-9 */
+    }
+}

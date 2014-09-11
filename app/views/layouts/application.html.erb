@@ -12,45 +12,26 @@
 			<div class="container">
 				<h1 class="logo">Hack Remotely</h1>
 
-				<input type="text" ng-model="vm.search">
-				<button ng-click="vm.send()">Search</button>
+                <form ng-submit="vm.send()">
+				    <input type="text" class="search-input" ng-model="vm.query" placeholder="Where ya hackin'?">
+				    <button ng-click="vm.send()" ng-disabled="!vm.position" class="search-button">
+                        <i class="fa fa-search"></i>
+                        Find a place
+                    </button>
+                </form>
 			</div>
 		</header>
 
-		<section class="container row">
-			<div class="venue-list col-md-12">
-				<div class="venue row" ng-repeat="item in vm.venues">
-					<div class="col-md-3">
-						<h5 class="venue-name">{{item.name}}</h5>
-						<address>
-							{{item.location.formattedAddress }}
-						</address>
-					</div>
-					<div class="col-sm-4">
-						{{item.hereNow.summary}}
-					</div>
-					<div class="col-sm-4">
-						<div>Wifi: <i class="glyphicon glyphicon-star"></i>
-							<i class="glyphicon glyphicon-star"></i>
-							<i class="glyphicon glyphicon-star"></i>
-							<i class="glyphicon glyphicon-star"></i>
-						<i class="glyphicon glyphicon-star-empty"></i></div>
-						<div>Food: <i class="glyphicon glyphicon-star"></i>
-							<i class="glyphicon glyphicon-star"></i>
-							<i class="glyphicon glyphicon-star"></i>
-							<i class="glyphicon glyphicon-star"></i>
-						<i class="glyphicon glyphicon-star-empty"></i></div>
-						<div>Environment: <i class="glyphicon glyphicon-star"></i>
-							<i class="glyphicon glyphicon-star"></i>
-							<i class="glyphicon glyphicon-star"></i>
-							<i class="glyphicon glyphicon-star"></i>
-						<i class="glyphicon glyphicon-star-empty"></i></div>
-					</div>
-				</div>
-			</div>
-		</section>
+        <nav class="navigation-main">
+            <div class="container row">
+                <div class="nav-item">
+                    Filters <i class="fa fa-angle-down"></i>
+                </div>
+            </div>
+        </nav>
 
-        <div ng-view></div> 
+		<section class="container row" ng-view>
+		</section>
 	</div>
 </body>
 </html>

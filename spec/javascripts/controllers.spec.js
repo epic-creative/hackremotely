@@ -8,7 +8,15 @@ describe('controllers', function() {
 
     beforeEach(inject(function($controller) {
         AppCtrl = $controller('AppCtrl', {
-            Search: function() {},
+            Search: {
+                query: function() {
+                    return {
+                        success: function(fn) {
+                            fn([{}, {}, {}]);
+                        }
+                    }
+                }
+            },
             Geo: {
                 locate: function() {
                     return {

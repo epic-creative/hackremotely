@@ -1,3 +1,6 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 // BareKit settings file
 @import "global/settings";
 
@@ -9,3 +12,4 @@
 
 // Modules
 @import "module/header";
+@import "module/venue";

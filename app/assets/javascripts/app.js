@@ -4,7 +4,8 @@ var app = angular.module('hack.app',
         'ngResource',
         'ngRoute',
         'hack.controllers',
-        'hack.services'
+        'hack.services',
+        'hack.directives'
     ]);
 
 app.config(function setup($routeProvider, $locationProvider) {
@@ -14,8 +15,10 @@ app.config(function setup($routeProvider, $locationProvider) {
         .when('/', {
             templateUrl: '/assets/welcome/index.html'
         })
-        .when('/search', {
-            templateUrl: '/assets/search/index.html'  
+        .when('/location/:id', {
+            templateUrl: '/assets/location/details.html',
+            controller: 'LocationCtrl',
+            controllerAs: 'vm' 
         })
         .otherwise({
             redirectTo: '/'

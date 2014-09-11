@@ -41,6 +41,7 @@ gem 'spring',        group: :development
 gem 'rails_12factor', group: :production
 gem 'foursquare2'
 gem 'angularjs-rails'
+gem 'font-awesome-sass'
 
 group :test, :development do
   gem 'jasmine-rails'

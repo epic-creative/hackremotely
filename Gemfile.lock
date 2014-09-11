@@ -43,6 +43,8 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.9.1)
       faraday (>= 0.7.4, < 0.10)
+    font-awesome-sass (4.2.0)
+      sass (~> 3.2)
     foursquare2 (2.0.1)
       faraday (~> 0.8)
       faraday_middleware (>= 0.8)
@@ -139,6 +141,7 @@ PLATFORMS
 DEPENDENCIES
   angularjs-rails
   coffee-rails (~> 4.0.0)
+  font-awesome-sass
   foursquare2
   jasmine-rails
   jbuilder (~> 2.0)

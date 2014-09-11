@@ -1,1 +1,44 @@
-<h1>Hack Remotely</h1>
+<div class="venue-list md-12">
+    <h3 class="venue-count" ng-if="!vm.venues.length">No results</h3>
+    <h3 class="venue-count" ng-if="vm.venues.length">Showing <strong>{{vm.venues.length}}</strong> places to hack near you</h3>
+
+    <div ng-if="vm.venues.length" class="venue-list-header row">
+        <div class="sm-3">
+            Location
+        </div>
+        <div class="sm-4">Currently There</div>
+        <div class="sm-4">Ratings</div>
+    </div>
+
+    <div class="venue row" ng-repeat="item in vm.venues" ng-click="vm.details(item)">
+        <!-- {{item | json}} -->
+        <div class="sm-3">
+            <h5 class="venue-name">{{item.name}}</h5>
+            
+            <address location="item.location">
+            </address>
+        </div>
+        <div class="sm-4">
+            {{item.hereNow.summary}}
+        </div>
+        <div class="sm-4">
+            <div>Wifi: 
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <div>Food: <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i></div>
+            <div>Environment: <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i></div>
+        </div>
+    </div>
+</div>
