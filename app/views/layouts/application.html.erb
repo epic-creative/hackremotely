@@ -10,12 +10,13 @@
 <body ng-app="hack.app">
 	<div ng-controller="AppCtrl as vm">
 		<header class="header row">
-			<div class="container">
+			<div class="container header-contain">
 				<h1 class="logo">Hack Remotely</h1>
 
                 <form class="search-form row" ng-submit="vm.send()">
 				    <input type="text" class="search-input sm-12 md-9" ng-model="vm.query" placeholder="Where ya hackin'?">
 				    <button class="search-btn sm-12 md-3" ng-click="vm.send()" ng-disabled="!vm.position">Find a place</button>
+                    <p class="search-help left">i.e. Nashville, Omaha, Dallas, etc.</p>
                 </form>
 			</div>
 		</header>
