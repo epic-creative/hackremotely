@@ -1,6 +1,7 @@
 (function() {
 
 function Venue($http) {
+    this.list = [];
     this.$http = $http;
 }
 

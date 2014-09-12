@@ -1,10 +1,18 @@
 .header {
     overflow: hidden;
 	padding: 1em 0;
+    position: relative;
 	background: #50b9b2;
 
     @include breakpoint(medium) {
-        padding: 1.875em 0;
+        padding: 0;
+    }
+
+    .hack-map {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: .3
     }
 }
 
@@ -89,6 +97,7 @@
         font-family: 'icomoon';
         content: "\e605";
         color: #e5e8f0;
+        cursor: pointer;
     }
 
     @include breakpoint(medium) {

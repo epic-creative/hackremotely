@@ -11,6 +11,8 @@ var app = angular.module('hack.app',
 app.config(['$routeProvider', '$locationProvider', function setup($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
+            controller: 'VenueListCtrl',
+            controllerAs: 'vm',
             templateUrl: '/templates/welcome/index.html'
         })
         .when('/location/:id', {

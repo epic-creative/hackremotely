@@ -12,21 +12,28 @@
     <%= csrf_meta_tags %>
 </head>
 <body ng-app="hack.app">
-	<div ng-controller="AppCtrl as vm">
-		<header class="header row">
+
+	<div>
+		<header class="header row" ng-controller="SearchCtrl as vm">
+            <div ng-if="vm.position" class="hack-map" hack-map marker 
+                lat="vm.position.latitude" lng="vm.position.longitude"
+                options="{ scrollwheel: false }"></div>
+            
 			<div class="container header-contain">
 				<h1 class="logo">Hack Remotely</h1>
 
-                <form class="search-form row">
-				    <input hack-autosuggest 
+                <form class="search-form row" ng-click="vm.clickForm($event)">
+				    <!-- hack-autosuggest 
                         source="vm.categories" 
                         category="vm.category"
                         query="vm.query"
-                        search="vm.send()"
+                        search="vm.send(vm.query)"
+                        ng-change="vm.queryChanged()" -->
+                    <input 
                         type="text" class="search-input sm-12 md-9" 
-                        ng-model="vm.query" ng-change="vm.queryChanged()" placeholder="Where ya hackin'?">
+                        ng-model="vm.query" placeholder="Where ya hackin'?">
                     
-                    <button ng-click="vm.send()" ng-disabled="!vm.position" class="search-btn sm-12 md-3">
+                    <button ng-click="vm.send(vm.query)" ng-disabled="!vm.position" class="search-btn sm-12 md-3">
                         Find a place
                     </button>
 

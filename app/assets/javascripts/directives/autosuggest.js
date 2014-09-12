@@ -1,5 +1,5 @@
 angular.module('hack.directives')
-    .directive('hackAutosuggest', function() {
+    .directive('hackAutosuggest', ['$timeout', function($timeout) {
         return {
             restrict: 'A',
             scope: {
@@ -11,6 +11,7 @@ angular.module('hack.directives')
             link: function(scope, el, attrs) {
                 var categories = [];
 
+                // TODO: Foursquare needs to be a service
                 Foursquare.categories.map(function(cat) {
                     return cat.categories;
                 }).forEach(function(array) {
@@ -37,12 +38,16 @@ angular.module('hack.directives')
                         return false;
                     },
                     select: function(event, ui) {
-                        scope.$apply(function() {
-                            scope.category = categories.filter(function(cat) {
-                                return cat.id === ui.item.value;
-                            })[0];
+                        scope.category = categories.filter(function(cat) {
+                            return cat.id === ui.item.value;
+                        })[0];
 
-                            scope.query = ui.item.label;
+                        scope.query = ui.item.label;
+
+                        scope.$apply();
+
+                        // Need a timeout for the scope.$apply to process
+                        $timeout(function() {
                             scope.search();
                         });
 
@@ -51,4 +56,4 @@ angular.module('hack.directives')
                 });
             }
         };
-    });
+    }]);

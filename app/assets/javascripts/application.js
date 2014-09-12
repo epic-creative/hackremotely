@@ -26,3 +26,5 @@
 // Directives
 //= require ./directives/main.js
 //= require_tree ./directives/
+// Filters
+//= require_tree ./filters/

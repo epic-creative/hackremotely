@@ -22,4 +22,17 @@
         background: linear-gradient(to bottom,  #f6f8f9 0%,#e5ebee 48%,#e5ebee 48%,#d7dee3 100%); /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#d7dee3',GradientType=0 ); /* IE6-9 */
     }
+
+    address {
+        font-size: .75em;
+    }
+}
+
+.icon-star-empty:before {
+    content: "\e608";
+    color: #ccc;
+}
+
+hack-stars {
+    display: inline-block;
 }
