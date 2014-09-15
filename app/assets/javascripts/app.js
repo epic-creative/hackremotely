@@ -23,6 +23,11 @@ app.config(['$routeProvider', '$locationProvider', function setup($routeProvider
         .otherwise({
             redirectTo: '/'
         });
-}]);
+}])
+.run(function($rootScope) {
+    $rootScope.$on("$routeChangeSuccess", function(event, current) {
+        $rootScope.bodyClass = current.$$route.controller.toLowerCase();
+    });
+});
 
 })();

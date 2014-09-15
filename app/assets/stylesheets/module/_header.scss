@@ -1,4 +1,22 @@
+.venuelistctrl .header {
+    max-height: 330px;
+    
+    .search-form {
+        @include breakpoint(medium) {
+            margin: 6.25em auto 4em;
+
+            &::before {
+                font-size: 4.5em;
+            }
+        }
+    }
+}
+
 .header {
+    -webkit-transition: max-height 1s;
+    transition: max-height 1s;
+
+    max-height: 230px;
     overflow: hidden;
 	padding: 1em 0;
     position: relative;
@@ -14,6 +32,10 @@
         width: 100%;
         opacity: .3
     }
+
+    .search-form {
+        transition: margin 1s;
+    };
 }
 
 .header-contain {
@@ -85,7 +107,7 @@
 
 .search-form {
     position: relative;
-    margin: 2em auto;
+    margin: .5em auto;
 
      &::before {
         position: absolute;
@@ -98,14 +120,6 @@
         content: "\e605";
         color: #e5e8f0;
         cursor: pointer;
-    }
-
-    @include breakpoint(medium) {
-        margin: 6.25em auto 4em;
-
-        &::before {
-            font-size: 4.5em;
-        }
     }
 }
 

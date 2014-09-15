@@ -9,6 +9,8 @@ class ApiController < ApplicationController
             :categoryId => search_query[:categoryId]
         )
 
+        # @venues.venues.select! { |v| v.verified == true }
+
         respond_to do |format|
             format.json { render json: @venues }
         end

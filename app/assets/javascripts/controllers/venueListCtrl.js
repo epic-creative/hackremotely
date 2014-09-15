@@ -6,11 +6,11 @@
     }
 
     VenueListCtrl.prototype.details = function(item) {
-        this.$location.path('location/' + item.id);
+        this.$location.path("location/" + item.id);
     };
 
-    VenueListCtrl.$inject = ['Venue', 'Geo', '$location'];
+    VenueListCtrl.$inject = ["Venue", "Geo", "$location", "$rootScope"];
 
-    angular.module('hack.controllers')
-        .controller('VenueListCtrl', VenueListCtrl);
+    angular.module("hack.controllers")
+        .controller("VenueListCtrl", VenueListCtrl);
 })(); 

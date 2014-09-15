@@ -13,7 +13,7 @@
 
     <meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
-<body ng-app="hack.app">
+<body ng-app="hack.app" ng-class="bodyClass">
 
 	<div>
 		<header class="header row" ng-controller="SearchCtrl as vm">
@@ -46,9 +46,67 @@
 
         <nav class="navigation-main">
             <div class="container row">
-                <div class="nav-item">
-                    Filters <i class="fa fa-angle-down"></i>
-                </div>
+                <ul class="nav dropdown-nav" data-options='{ "click": false }'>
+                    <li class="nav-item search-filters pull-right active">
+                        <a>Filters <i class="icon-arrow-down"></i></a>
+
+                        <div class="search-filters-list">
+                            <label>
+                                <input type="checkbox" />
+                                COFFEE
+                            </label>
+                            <label>
+                                <input type="checkbox" />
+                                Membership fee required
+                            </label>
+                            <label>
+                                <input type="checkbox" />
+                                Dedicated meeting rooms
+                            </label>
+                            <label>
+                                <input type="checkbox" />
+                                Dedicated “quiet” rooms
+                            </label>
+                            <label>
+                                <input type="checkbox" />
+                                Access to printer
+                            </label>
+                            <label>
+                                <input type="checkbox" />
+                                Sunlight
+                            </label>
+                            <label>
+                                <input type="checkbox" />
+                                Access to fridge (if you want to bring your lunch)
+                            </label>
+                            <label>
+                                <input type="checkbox" />
+                                Food/beverages available for purchase
+                            </label>
+                            <label>
+                                <input type="checkbox" />
+                                Power outlets
+                            </label>
+                            <label>
+                                <input type="checkbox" />
+                                Microwave
+                            </label>
+                            <label>
+                                <input type="checkbox" />
+                                Internet speed / reliability
+                            </label>
+                            <label>
+                                <input type="checkbox" />
+                                Keywords
+                            </label>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="#/">Home</a></li>
+                    <li class="nav-item"><a href="#/">Places to Work</a></li>
+                    <li class="nav-item"><a href="#/">Remote Hacks</a></li>
+                    <li class="nav-item"><a href="#/">About Hack Remotely</a></li>
+                    <li class="nav-item"><a href="#/">Contact</a></li>
+                </ul>
             </div>
         </nav>
 

@@ -3,10 +3,48 @@
     width: 100%;
     height: 50px;
 
-    .nav-item {
+    .nav {
+        color: white;
+        display: inline-block;
+
+        .nav-item {
+            display: inline-block;
+
+            &:first-child {
+                width: 6em;
+            }
+
+            a, a:active, a:visited {
+                padding: .97em;
+                display: block;
+                color: white;
+                text-decoration: none;
+            }
+
+            &.active, a:hover {
+                background: #F85300;
+            }
+        }
+    }
+
+    .search-filters-list {
+        display: none;
+        position: relative;
         color: white;
         background: #F85300;
-        display: inline-block;
-        padding: 16px;
+        padding: 1em;
+        width: 25em;
+
+        label {
+            display: block;
+        }
+
+        &:hover {
+            display: block;
+        }
+    }
+    
+    .search-filters:hover .search-filters-list {
+        display: block;
     }
 }

@@ -58,6 +58,7 @@ SearchCtrl.prototype.send = function(query) {
         if (!this.position) return;
 
         if (query) {
+            this.$location.path("/");
             
             return this.geo.search(query)
                 .then(function(location) {
