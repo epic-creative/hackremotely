@@ -26,7 +26,7 @@ app.config(['$routeProvider', '$locationProvider', function setup($routeProvider
 }])
 .run(['$rootScope', function($rootScope) {
     $rootScope.$on("$routeChangeSuccess", function(event, current) {
-        $rootScope.bodyClass = current.$$route.controller.toLowerCase();
+        if (current.$$route.controller) $rootScope.bodyClass = current.$$route.controller.toLowerCase();
     });
 }]);
 
