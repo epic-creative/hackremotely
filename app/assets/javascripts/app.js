@@ -24,10 +24,10 @@ app.config(['$routeProvider', '$locationProvider', function setup($routeProvider
             redirectTo: '/'
         });
 }])
-.run(function($rootScope) {
+.run(['$rootScope', function($rootScope) {
     $rootScope.$on("$routeChangeSuccess", function(event, current) {
         $rootScope.bodyClass = current.$$route.controller.toLowerCase();
     });
-});
+}]);
 
 })();
