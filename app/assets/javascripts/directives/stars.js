@@ -1,5 +1,5 @@
 angular.module("hack.directives")
-    .directive("hackStars", function() {
+    .directive("hackStars", function(debounce) {
         return {
             restrict: "E",
             scope: true,
@@ -7,7 +7,7 @@ angular.module("hack.directives")
             link: function(scope, el, attrs) {
                 scope.stars = [1, 1, 1, 1, 0];
 
-                el.on("mousemove", function(event) {
+                el.on("mousemove", debounce(function(event) {
                     var index; 
                     if (event.target.tagName === "I") {
                         index = $(event.target).index();
@@ -19,7 +19,7 @@ angular.module("hack.directives")
 
                         scope.$apply();
                     }
-                })
+                }, 50));
 
                 el.on("mouseleave", function() {
                     scope.stars = [1, 1, 1, 1, 0];

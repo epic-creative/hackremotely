@@ -23,6 +23,7 @@
 //= require ./controllers/main.js
 //= require_tree ./controllers/
 //= require barekit/js/barekit.min.js
+//= require ng-debounce/angular-debounce
 // Directives
 //= require ./directives/main.js
 //= require_tree ./directives/

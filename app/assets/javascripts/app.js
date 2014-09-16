@@ -3,6 +3,7 @@ var app = angular.module('hack.app',
     [
         'ngResource',
         'ngRoute',
+        'debounce',
         'hack.controllers',
         'hack.services',
         'hack.directives'
