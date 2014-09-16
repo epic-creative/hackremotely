@@ -1,5 +1,5 @@
 angular.module("hack.directives")
-    .directive("hackStars", function(debounce) {
+    .directive("hackStars", ["debounce", function(debounce) {
         return {
             restrict: "E",
             scope: true,
@@ -28,4 +28,4 @@ angular.module("hack.directives")
                 });
             }
         };
-    });
+    }]);
