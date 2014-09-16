@@ -43,6 +43,7 @@ gem 'rails_12factor', group: :production
 gem 'foursquare2'
 gem 'angularjs-rails'
 gem 'font-awesome-sass'
+gem 'bower-rails'
 
 group :test, :development do
   gem 'jasmine-rails'
